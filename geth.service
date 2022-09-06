@@ -1,0 +1,19 @@
+[Unit]
+Description=geth as a service
+After=network.target
+
+[Service]
+User=geth
+Group=geth
+Environment=HOME=/home/geth
+Type=simple
+Restart=always
+RestartSec=30s
+ExecStart=/user/bin/geth --http --cache=8192
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

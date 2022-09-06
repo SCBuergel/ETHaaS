@@ -1,0 +1,21 @@
+[Unit]
+Description=nethermind as a service
+After=network.target
+
+[Service]
+User=nethermind
+Group=nethermind
+Type=simple
+Restart=always
+RestartSec=30s
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+EnvironmentFile=/home/nethermind/.env
+WorkingDirectory=/home/nethermind
+ExecStart=/home/nethermind/Nethermind.Runner --datadir /home/nethermind/data
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=default.target
