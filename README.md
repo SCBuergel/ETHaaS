@@ -4,7 +4,7 @@ ETHaaS allows you to set up an Ethereum client on your Unix system as a service.
 ## Installation
 Just download the shell script, make it executable and run it, pass the desired client name as a parameter (currently supported `geth` and `nethermind`):
 ```
-wget https://github.com/SCBuergel/eth-as-a-service/blob/main/ETHaaS.sh
+wget https://raw.githubusercontent.com/SCBuergel/eth-as-a-service/main/ETHaaS.sh
 chmod +x ETHaaS.sh
 ./ETHaaS.sh nethermind
 ```
