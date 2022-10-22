@@ -9,7 +9,7 @@ Environment=HOME=/home/geth
 Type=simple
 Restart=always
 RestartSec=30s
-ExecStart=/user/bin/geth --http --cache=8192
+ExecStart=/usr/bin/geth --http --cache=8192
 KillMode=process
 KillSignal=SIGINT
 TimeoutStopSec=90
