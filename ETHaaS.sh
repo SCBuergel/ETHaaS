@@ -56,9 +56,10 @@ then
 		create_user $2
 		mkdir $tmp_dir
 		cd $tmp_dir
+		sudo apt install git -y
 		git clone --branch stable --single-branch https://github.com/ledgerwatch/erigon.git
 		cd erigon
-		# TODO: install go if it's not available
+		sudo apt install golang -y
 		make erigon
 		sudo cp build/bin/erigon /home/$2/
 		cd ../..
@@ -70,6 +71,7 @@ then
 		create_user $2
 		mkdir $tmp_dir
 		cd $tmp_dir
+		sudo apt install git -y
 		echo "installing rust"
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 		source "$HOME/.cargo/env"
