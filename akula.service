@@ -1,0 +1,19 @@
+[Unit]
+Description=akula as a service
+After=network.target
+
+[Service]
+User=akula
+Group=akula
+Environment=HOME=/home/akula
+Type=simple
+Restart=always
+RestartSec=30s
+ExecStart=/home/akula/akula
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

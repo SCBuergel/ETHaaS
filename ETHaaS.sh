@@ -64,6 +64,24 @@ then
 		cd ../..
 		rm -rf $tmp_dir
 
+	elif [[ "$2" == "akula" ]]
+	then
+		echo "setting up akula as a service"
+		create_user $2
+		mkdir $tmp_dir
+		cd $tmp_dir
+		echo "installing rust"
+		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+		source "$HOME/.cargo/env"
+		git clone https://github.com/akula-bft/akula
+		sudo apt install clang -y
+		sudo apt install pkg-config -y
+		cd akula
+		cargo build --all --profile=production
+		sudo cp target/production/akula /home/$2/
+		cd ../..
+		rm -rf $tmpdir
+
 	else
 		echo "$client_not_found"
 		exit 1
@@ -92,6 +110,9 @@ then
 	elif [[ "$2" == "erigon" ]]
 	then
 		echo "removing erigon service"
+	elif [[ "$2" == "akula" ]]
+	then
+		echo "removing akula service"
 	else
 		echo "$client_not_found"
 	fi
