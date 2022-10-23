@@ -60,7 +60,7 @@ then
 		cd erigon
 		# TODO: install go if it's not available
 		make erigon
-		cp build/bin/erigon /usr/bin
+		sudo cp build/bin/erigon /home/$2/
 		cd ../..
 		rm -rf $tmp_dir
 

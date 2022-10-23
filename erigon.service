@@ -9,7 +9,7 @@ Environment=HOME=/home/erigon
 Type=simple
 Restart=always
 RestartSec=30s
-ExecStart=/usr/bin/erigon
+ExecStart=/home/erigon/erigon
 KillMode=process
 KillSignal=SIGINT
 TimeoutStopSec=90
