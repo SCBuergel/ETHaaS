@@ -3,8 +3,8 @@ Description= erigon as a service
 After=network.target
 
 [Service]
-User=geth
-Group=geth
+User=erigon
+Group=erigon
 Environment=HOME=/home/erigon
 Type=simple
 Restart=always
